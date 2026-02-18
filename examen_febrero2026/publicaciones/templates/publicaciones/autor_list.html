@@ -4,7 +4,11 @@
     <h2>Lista de Autores</h2>
     <ul>
         {% for autor in autores %}
-            <li>{{ autor.nombre }} {{ autor.apellido }}</li>
+        {% if autor.fecha_nacimiento.year < 1900 %}
+                    <li>{{ autor.nombre }} {{ autor.apellidos }} <span style="color: red;">{{autor.fecha_nacimiento}}</span></li>
+        {% else %}
+            <li>{{ autor.nombre }} {{ autor.apellidos }} {{autor.fecha_nacimiento}}</li>    
+        {% endif %}
         {% empty %}
             <li>No hay autores disponibles.</li>
         {% endfor %}
