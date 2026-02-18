@@ -1,0 +1,12 @@
+{% extends 'publicaciones/base.html' %}
+
+{% block content %}
+    <h2>Lista de Discos</h2>
+    <ul>
+        {% for disco in discos %}
+            <li>{{ disco.titulo }} - {{ disco.formato }} - {{ disco.año }} - {{ disco.discografica }} - {{ disco.num_pistas }} pistas - {{ disco.genero }}</li>
+        {% empty %}
+            <li>No hay discos disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

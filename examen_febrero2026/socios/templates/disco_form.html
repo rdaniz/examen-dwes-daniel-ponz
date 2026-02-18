@@ -1,0 +1,17 @@
+{% extends 'publicaciones/base_form.html' %}
+
+{% block content %}
+    <h2>Crear Disco</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.titulo.label_tag }} {{ form.titulo }}
+        {{ form.formato.label_tag }} {{ form.formato }}
+        {{ form.año.label_tag }} {{ form.año }}
+        {{ form.discografica.label_tag }} {{ form.discografica }}
+        {{ form.num_pistas.label_tag }} {{ form.num_pistas }}
+        {{ form.genero.label_tag }} {{ form.genero }}
+        
+        <button type="submit">Guardar Disco</button>
+        <a href="{% url 'discos_lista' %}">Cancelar</a>
+    </form>
+{% endblock %}
