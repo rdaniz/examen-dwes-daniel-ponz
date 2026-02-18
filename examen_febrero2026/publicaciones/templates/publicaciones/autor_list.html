@@ -1,0 +1,12 @@
+{% extends 'publicaciones/base.html' %}
+
+{% block content %}
+    <h2>Lista de Autores</h2>
+    <ul>
+        {% for autor in autores %}
+            <li>{{ autor.nombre }} {{ autor.apellido }}</li>
+        {% empty %}
+            <li>No hay autores disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

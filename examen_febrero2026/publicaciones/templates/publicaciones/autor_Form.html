@@ -1,0 +1,14 @@
+{% extends 'publicaciones/base.html' %}
+
+{% block content %}
+    <h2>Crear Autor</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.nombre.label_tag }} {{ form.nombre }}
+        {{ form.apellidos.label_tag }} {{ form.apellidos }}
+        {{ form.fecha_nacimiento.label_tag }} {{ form.fecha_nacimiento }}
+        
+        <button type="submit">Guardar Autor</button>
+        <a href="{% url 'autores_lista' %}">Cancelar</a>
+    </form>
+{% endblock %}
